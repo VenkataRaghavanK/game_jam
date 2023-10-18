@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://6qvgsty17sxh"]
+
+[ext_resource type="Script" path="res://player_cam/player_cam.gd" id="1_milvn"]
+
+[node name="PlayerCam" type="Camera2D"]
+script = ExtResource("1_milvn")
+
+[node name="ShakeTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

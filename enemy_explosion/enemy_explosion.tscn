@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5h0jr8jtkxmv"]
+
+[ext_resource type="AudioStream" uid="uid://bwl7bnbk730as" path="res://assets/sound/pickup3.ogg" id="1_se25c"]
+[ext_resource type="Texture2D" uid="uid://cnjhfxoqpkk33" path="res://assets/explosion/enemy-deadth.png" id="1_xbc3f"]
+[ext_resource type="Script" path="res://enemy_explosion/enemy_explosion.gd" id="2_dww76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alq38"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu27u"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fawbi"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c41ck"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k88kc"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(160, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opc01"]
+atlas = ExtResource("1_xbc3f")
+region = Rect2(200, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cx5xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alq38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu27u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fawbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c41ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k88kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opc01")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="EnemyExplosion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cx5xm")
+autoplay = "default"
+script = ExtResource("2_dww76")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_se25c")
+autoplay = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

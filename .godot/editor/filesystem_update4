@@ -1,0 +1,13 @@
+res://hud/hud.tscn
+res://assets/GL_48_White.tres
+res://assets/LG_64_Title.tres
+res://assets/LG_24_SubTitle.tres
+res://level_base/levels/level_1.tscn
+res://level_base/levels/level_2.tscn
+res://level_base/levels/level_3.tscn
+res://player/player.tscn
+res://boss/boss.tscn
+res://main/main.tscn
+res://level_base/level_base.tscn
+res://level_base/levels/level_1_t.tscn
+res://level_base/levels/level_2_t.tscn
